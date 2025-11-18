@@ -1,0 +1,476 @@
+/* --------------------------------------------------
+   Variables & Reset
+   -------------------------------------------------- */
+:root {
+  --maxw: 1180px;
+  --accent: #0b1720;
+  --muted: #6d6d72;
+  --cream: #fbf9f7;
+  --soft: #f3f2f0;
+  --radius: 12px;
+  --gap: 22px;
+  --base-font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Evita zoom estranho em alguns dispositivos */
+html {
+  font-size: 16px;
+}
+
+/* --------------------------------------------------
+   Body como coluna para footer ficar embaixo
+   -------------------------------------------------- */
+body {
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: var(--accent);
+  background: #fbf9f7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  font-size: var(--base-font-size);
+}
+
+/* --------------------------------------------------
+   Layout container
+   -------------------------------------------------- */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* --------------------------------------------------
+   Typography utilities
+   -------------------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: var(--accent);
+}
+
+.lead {
+  margin-top: 18px;
+  color: #333;
+  max-width: 52ch;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* --------------------------------------------------
+   Header & Navigation
+   -------------------------------------------------- */
+.site-header {
+  padding: 24px 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #f0efec;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  flex-shrink: 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* Suporta:
+   <div class="brand"><h1>...</h1></div>
+   <a class="brand"><span class="brand-name">...</span></a>
+*/
+.brand,
+.brand-name,
+.brand h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand h1,
+.brand-name {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin: 0;
+  color: var(--accent);
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.18s ease;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.nav a:hover {
+  background: var(--soft);
+}
+
+.nav a.active {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: inset 0 -2px 0 0 rgba(11, 23, 32, 0.12);
+}
+
+/* --------------------------------------------------
+   Hero (index)
+   -------------------------------------------------- */
+.hero {
+  padding: 56px 0;
+  border-bottom: 1px solid #f0efec;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 44px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.hero-text .lead {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #1f2933;
+}
+
+/* Botão principal */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 24px;
+  background: #0b1720;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 22px;
+  box-shadow: 0 10px 24px rgba(11, 23, 32, 0.35);
+  border: 1px solid #020617;
+  letter-spacing: 0.04em;
+}
+
+.btn:hover {
+  background: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(11, 23, 32, 0.45);
+}
+
+.hero-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(11, 23, 32, 0.18);
+  object-fit: cover;
+}
+
+/* --------------------------------------------------
+   Sections & Titles
+   -------------------------------------------------- */
+.section {
+  padding: 56px 0;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin: 0 0 22px 0;
+}
+
+/* --------------------------------------------------
+   Card grid (index modalidades)
+   -------------------------------------------------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--cream);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(11, 23, 32, 0.04);
+  min-height: 430px;
+}
+
+/* Imagens dos cards – nunca cortar */
+/* Imagens dos cards e retratos — mesma altura, foco no rosto */
+.card img,
+.post-thumb {
+  width: 100%;
+  height: 260px;           /* todas as imagens com a mesma altura */
+  display: block;
+  object-fit: cover;       /* mantém proporção, sem distorcer */
+  object-position: 50% 25%;/* sobe um pouco o enquadramento (foco no rosto) */
+}
+
+.card-body {
+  flex: 1; /* ocupa toda a altura disponível do card */
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-body h4 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: #374151;
+  margin: 0;
+}
+
+/* --------------------------------------------------
+   Botões secundários (cards + retratos pessoais)
+   -------------------------------------------------- */
+.btn-outline {
+  margin-top: auto; /* empurra para o final do container flex */
+  align-self: center; /* centraliza horizontalmente */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 24px;
+  border: 1px solid #020617;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: #0b1720; /* fundo preto */
+  color: #ffffff; /* texto branco */
+  letter-spacing: 0.04em;
+  box-shadow: 0 10px 24px rgba(11, 23, 32, 0.28);
+  transition: all 0.16s ease;
+}
+
+.btn-outline:hover {
+  background: #111827;
+  border-color: #020617;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(11, 23, 32, 0.4);
+}
+
+/* --------------------------------------------------
+   Journal / posts grid (article-1.html)
+   -------------------------------------------------- */
+.page-title {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin: 14px 0 6px;
+  color: var(--accent);
+}
+
+/* Grade dos retratos pessoais */
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gap);
+  margin-top: 18px;
+  margin-bottom: 56px; /* respiro antes do footer */
+}
+
+/* Cards dos retratos pessoais */
+.post-card {
+  background: var(--cream);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(11, 23, 32, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.post-body {
+  flex: 1; /* igual aos cards: ocupa toda a altura */
+  padding: 18px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-body h3 {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* --------------------------------------------------
+   Footer (global)
+   -------------------------------------------------- */
+.site-footer {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  padding: 28px 0 !important;
+  border-top: 1px solid #f0efec !important;
+  background: #ffffff !important;
+  text-align: center !important;
+  color: var(--muted) !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  position: static !important;
+  z-index: 1 !important;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+
+  flex-shrink: 0; /* não comprime no layout flex do body */
+}
+
+/* Container interno do footer */
+.site-footer .container {
+  max-width: var(--maxw) !important;
+  margin: 0 auto !important;
+  padding: 0 28px !important;
+}
+
+/* Normaliza o parágrafo interno */
+.site-footer p,
+.site-footer p * {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--muted) !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+}
+
+/* Se algo herdar display flex ou grid do container pai, força o footer a não herdar */
+.site-footer,
+.site-footer * {
+  display: revert !important;
+}
+
+/* --------------------------------------------------
+   Main flex item (ocupa o centro da tela)
+   -------------------------------------------------- */
+main {
+  flex: 1 0 auto;
+  display: block;
+}
+
+/* --------------------------------------------------
+   Responsivo
+   -------------------------------------------------- */
+@media (max-width: 900px) {
+  .hero {
+    padding-top: 38px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media {
+    order: -1;
+  }
+
+  .header-inner {
+    gap: 12px;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .nav a {
+    padding: 6px 8px;
+  }
+
+  /* grades com 1 ou 2 colunas confortáveis */
+  .card-grid,
+  .journal-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .hero-text h2 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .journal-grid,
+  .card-grid {
+    grid-template-columns: 1fr; /* 1 card por linha */
+    gap: 18px;
+  }
+
+  .card,
+  .post-card {
+    min-height: auto; /* deixa a altura se adaptar ao conteúdo no mobile */
+  }
+
+  .journal-grid {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Retratos pessoais — Bárbara Bretas</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<body>
+  <!-- Header unificado com a home -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Página inicial">
+        <span class="brand-name">Bárbara Bretas</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Navegação principal">
+        <a href="index.html#topo">Sobre</a>
+        <a href="index.html#modalidades">Modalidades de fotos</a>
+        <a href="article-1.html" class="active" aria-current="page">Retratos pessoais</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" id="main" role="main">
+    <header style="margin-top:18px;">
+      <h1 class="page-title">Retratos pessoais</h1>
+      <p class="lead">Coleções e ensaios selecionados.</p>
+    </header>
+
+    <section class="journal-grid" aria-label="Coleção de ensaios — Retratos pessoais">
+      <!-- Post 1 -->
+      <article class="post-card" aria-labelledby="post1-title">
+        <img src="images/retrato.jpg" alt="Retrato íntimo em luz natural" class="post-thumb">
+        <div class="post-body">
+          <h3 id="post1-title">Retratos íntimos: luz e textura</h3>
+          <p class="muted">
+            Luz natural, direção sutil e tratamento tonal para destacar textura de pele e expressão.
+          </p>
+          <a class="btn-outline" href="ensaio-retratos-intimos.html">Ver sobre o ensaio</a>
+        </div>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="post-card" aria-labelledby="post2-title">
+        <img src="images/me.jpg" alt="Retrato editorial minimalista em preto e branco" class="post-thumb">
+        <div class="post-body">
+          <h3 id="post2-title">Editorial minimal: corpo e olhar</h3>
+          <p class="muted">
+            Ensaios com estética editorial, fundos neutros e direção de poses para um visual sofisticado.
+          </p>
+          <a class="btn-outline" href="ensaio-editorial-minimal.html">Ver sobre o ensaio</a>
+        </div>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="post-card" aria-labelledby="post3-title">
+        <img src="images/retrato.jpg" alt="Retrato em ambiente externo com elementos arquitetônicos" class="post-thumb">
+        <div class="post-body">
+          <h3 id="post3-title">Retratos ambientais</h3>
+          <p class="muted">
+            Narrativa visual integrando o sujeito ao espaço que o cerca.
+          </p>
+          <a class="btn-outline" href="ensaio-retratos-ambientais.html">Ver sobre o ensaio</a>
+        </div>
+      </article>
+
+      <!-- Post 4 -->
+      <article class="post-card" aria-labelledby="post4-title">
+        <img src="images/documental.jpg" alt="Retrato documental intimista em preto e branco" class="post-thumb">
+        <div class="post-body">
+          <h3 id="post4-title">Documental intimista</h3>
+          <p class="muted">
+            Registros de pessoas em contextos cotidianos com sensibilidade.
+          </p>
+          <a class="btn-outline" href="ensaio-documental-intimista.html">Ver sobre o ensaio</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> — Todos os direitos reservados por Bárbara Bretas</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var y = new Date().getFullYear();
+      var el = document.getElementById('year');
+      if (el) el.textContent = y;
+    })();
+  </script>
+</body>
+
+</html>
